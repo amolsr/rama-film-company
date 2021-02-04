@@ -41,7 +41,10 @@ export default function Main() {
             ></div>
           ))}
         </Carousel>
-        <Box my={8} style={{ backgroundColor: "#f5f5f0" }}>
+        <Box
+          my={8}
+          style={{ backgroundColor: "#f5f5f0", textAlignLast: "center" }}
+        >
           <Container>
             <Grid
               container
@@ -128,6 +131,118 @@ export default function Main() {
             </Grid>
           </Container>
         </Box>
+        <Container>
+          <Typography
+            variant="h3"
+            align="center"
+            style={{ margin: "5vh 0vh" }}
+            gutterBottom
+          >
+            OUR <span style={{ color: "#ff7902" }}>SERVICE</span>
+          </Typography>
+          <Grid
+            container
+            justify="center"
+            alignItems="center"
+            spacing={6}
+            style={{
+              margin: "5vh 0vh",
+              width: "100%",
+              textAlignLast: "center",
+            }}
+          >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/video.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                VIDEO PRODUCTION
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Imaginations look better walking rather than in words. We are
+                passionate about making ideas come to life in the best possible
+                way. We make sure we take the best shot that can either give
+                goosebumps or make you smile. Perfection is in our habit now.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/music.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                MUSIC PRODUCTION
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                We know nothing is complete without a good music. So we put the
+                best rhythm you ever heard of in our productions. Give your ears
+                some pleasure and put the earphones. We bet you would love the
+                taste of our music.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/sound.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                SOUND DESIGNING
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                You tell the story, we set the tone. Let's your story get heard.
+                We make sounds that people know they love but wonder where they
+                came from. From delicate mixes to complex audio manipulation, we
+                handle the odds and ends of audio. Mastering, mixing, fixing.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/post.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                POST PRODUCTION
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Putting the pieces together for a complete package. We wanna
+                make sure that you love what we have done so we deliver the best
+                upshot. Though quality takes time, we’ll always deliver your
+                project on time, if not early.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/3d.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                3D & VFX
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                Putting the pieces together for a complete package. We wanna
+                make sure that you love what we have done so we deliver the best
+                upshot. Though quality takes time, we’ll always deliver your
+                project on time, if not early.
+              </Typography>
+            </Grid>{" "}
+            <Grid item xs={12} sm={6} md={6} lg={4}>
+              <img
+                src={process.env.PUBLIC_URL + "/image/core-img/setting.png"}
+                alt="sect2"
+              />
+              <Typography variant="h5" gutterBottom>
+                ADVERTISEMENT
+              </Typography>
+              <Typography variant="body1" gutterBottom>
+                You tell the idea you want us to follow, we set the situation.
+                Let's your idea be the intermediary between you and your
+                targeted consumer. From Flyers, Banners to complex VFX & 3D
+                advertisement, we handle the odds and ends of advertisement.
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
       </Box>
       <Footer />
     </div>
