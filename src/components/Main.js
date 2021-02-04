@@ -20,6 +20,62 @@ export default function Main() {
     process.env.PUBLIC_URL + "/image/2.jpg",
     process.env.PUBLIC_URL + "/image/33.jpg",
   ];
+  var gridItems = [
+    {
+      url: "/image/core-img/video.png",
+      title: "VIDEO PRODUCTION",
+      text:
+        "Imaginations look better walking rather than in words. We are passionate about making ideas come to life in the best possible way. We make sure we take the best shot that can either give goosebumps or make you smile. Perfection is in our habit now.",
+    },
+    {
+      url: "/image/core-img/music.png",
+      title: "MUSIC PRODUCTION",
+      text:
+        "We know nothing is complete without a good music. So we put the best rhythm you ever heard of in our productions. Give your ears some pleasure and put the earphones. We bet you would love the taste of our music.",
+    },
+    {
+      url: "/image/core-img/sound.png",
+      title: "SOUND DESIGNING",
+      text:
+        "You tell the story, we set the tone. Let's your story get heard. We make sounds that people know they love but wonder where they came from. From delicate mixes to complex audio manipulation, we handle the odds and ends of audio. Mastering, mixing, fixing.",
+    },
+    {
+      url: "/image/core-img/post.png",
+      title: "POST PRODUCTION",
+      text:
+        "Putting the pieces together for a complete package. We wanna make sure that you love what we have done so we deliver the best upshot. Though quality takes time, we’ll always deliver your project on time, if not early.",
+    },
+    {
+      url: "/image/core-img/3d.png",
+      title: "3D & VFX",
+      text:
+        "Putting the pieces together for a complete package. We wanna make sure that you love what we have done so we deliver the best upshot. Though quality takes time, we’ll always deliver your project on time, if not early.",
+    },
+    {
+      url: "/image/core-img/setting.png",
+      title: "ADVERTISEMENT",
+      text:
+        "You tell the idea you want us to follow, we set the situation. Let's your idea be the intermediary between you and your targeted consumer. From Flyers, Banners to complex VFX & 3D advertisement, we handle the odds and ends of advertisement.",
+    },
+    {
+      url: "/image/core-img/3d.png",
+      title: "CORPORARE VIDEO",
+      text:
+        "Corporate video refers to any type of non-advertisement based video content created for and commissioned by a business, company, corporation, or organization. Today, the vast majority of corporate video content is hosted online and is published on the company’s website page and distributed through social media or email marketing.",
+    },
+    {
+      url: "/image/core-img/setting.png",
+      title: "ARTIST MANAGEMENT",
+      text:
+        "A talent remains ordinary until gets its skills showcased. We want you to be heard, seen, or presented to the world in the most perfect way possible. We bring opportunities. Let's bring it on.",
+    },
+    {
+      url: "/image/core-img/3d.png",
+      title: "EVENT MANAGEMENT",
+      text:
+        "We have a dedicated team ready to give you beautiful memories, not a headache that comes along with every event planning. We specialize in designing every kind of event with a bit of personalization. We believe it's the little things that matter and that is why we focus on details. No matter how big or small the event you wish to organize, we can take care of all your event planning needs.",
+    },
+  ];
   const classes = useStyle();
   return (
     <div>
@@ -131,15 +187,56 @@ export default function Main() {
             </Grid>
           </Container>
         </Box>
+      </Box>
+      <Container>
+        <Typography
+          variant="h3"
+          align="center"
+          style={{ margin: "5vh 0vh" }}
+          gutterBottom
+        >
+          OUR <span style={{ color: "#ff7902" }}>SERVICE</span>
+        </Typography>
+        <Grid
+          container
+          justify="center"
+          alignItems="center"
+          spacing={6}
+          style={{
+            margin: "5vh 0vh",
+            width: "100%",
+            textAlignLast: "center",
+          }}
+        >
+          {gridItems.map((item, i) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={4}
+              style={{ alignSelf: "start" }}
+            >
+              <img src={process.env.PUBLIC_URL + item.url} alt={i} />
+              <Typography variant="h5" gutterBottom>
+                {item.title}
+              </Typography>
+              <Typography
+                variant="body1"
+                style={{ textAlign: "center" }}
+                gutterBottom
+              >
+                {item.text}
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+      <Box
+        my={8}
+        style={{ backgroundColor: "#f5f5f0", textAlignLast: "center" }}
+      >
         <Container>
-          <Typography
-            variant="h3"
-            align="center"
-            style={{ margin: "5vh 0vh" }}
-            gutterBottom
-          >
-            OUR <span style={{ color: "#ff7902" }}>SERVICE</span>
-          </Typography>
           <Grid
             container
             justify="center"
@@ -148,97 +245,37 @@ export default function Main() {
             style={{
               margin: "5vh 0vh",
               width: "100%",
-              textAlignLast: "center",
             }}
           >
-            <Grid item xs={12} sm={6} md={6} lg={4}>
+            <Grid item md={12} lg={6}>
+              {" "}
               <img
-                src={process.env.PUBLIC_URL + "/image/core-img/video.png"}
-                alt="sect2"
+                src={process.env.PUBLIC_URL + "/image/phot.jpg"}
+                alt="sect1"
+                className={classes.img}
               />
-              <Typography variant="h5" gutterBottom>
-                VIDEO PRODUCTION
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                Imaginations look better walking rather than in words. We are
-                passionate about making ideas come to life in the best possible
-                way. We make sure we take the best shot that can either give
-                goosebumps or make you smile. Perfection is in our habit now.
-              </Typography>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <img
-                src={process.env.PUBLIC_URL + "/image/core-img/music.png"}
-                alt="sect2"
-              />
-              <Typography variant="h5" gutterBottom>
-                MUSIC PRODUCTION
+            <Grid item md={12} lg={6}>
+              <Typography variant="h3" align="center" gutterBottom>
+                ABOUT <span style={{ color: "#ff7902" }}> US</span>
               </Typography>
-              <Typography variant="body1" gutterBottom>
-                We know nothing is complete without a good music. So we put the
-                best rhythm you ever heard of in our productions. Give your ears
-                some pleasure and put the earphones. We bet you would love the
-                taste of our music.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <img
-                src={process.env.PUBLIC_URL + "/image/core-img/sound.png"}
-                alt="sect2"
-              />
-              <Typography variant="h5" gutterBottom>
-                SOUND DESIGNING
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                You tell the story, we set the tone. Let's your story get heard.
-                We make sounds that people know they love but wonder where they
-                came from. From delicate mixes to complex audio manipulation, we
-                handle the odds and ends of audio. Mastering, mixing, fixing.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <img
-                src={process.env.PUBLIC_URL + "/image/core-img/post.png"}
-                alt="sect2"
-              />
-              <Typography variant="h5" gutterBottom>
-                POST PRODUCTION
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                Putting the pieces together for a complete package. We wanna
-                make sure that you love what we have done so we deliver the best
-                upshot. Though quality takes time, we’ll always deliver your
-                project on time, if not early.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <img
-                src={process.env.PUBLIC_URL + "/image/core-img/3d.png"}
-                alt="sect2"
-              />
-              <Typography variant="h5" gutterBottom>
-                3D & VFX
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                Putting the pieces together for a complete package. We wanna
-                make sure that you love what we have done so we deliver the best
-                upshot. Though quality takes time, we’ll always deliver your
-                project on time, if not early.
-              </Typography>
-            </Grid>{" "}
-            <Grid item xs={12} sm={6} md={6} lg={4}>
-              <img
-                src={process.env.PUBLIC_URL + "/image/core-img/setting.png"}
-                alt="sect2"
-              />
-              <Typography variant="h5" gutterBottom>
-                ADVERTISEMENT
-              </Typography>
-              <Typography variant="body1" gutterBottom>
-                You tell the idea you want us to follow, we set the situation.
-                Let's your idea be the intermediary between you and your
-                targeted consumer. From Flyers, Banners to complex VFX & 3D
-                advertisement, we handle the odds and ends of advertisement.
+              <Typography variant="body1" align="justify">
+                Rama Film Company is an Indian film Production company, owned by
+                DDRS Brothers its wholly owned subsidiary DDRS Group, and is one
+                of Bollywood's "Big Six" film studios. Its production company &
+                studios are at Ashram marg Sant Ravidas nagar, Utar Pradesh,
+                India. Distribution and other corporate offices are in
+                Ghaziabad, Delhi NCR . Rama Film Company (RFC) is a member of
+                the Motion Picture Association of Indis(MPAI). Rama Film Company
+                was founded in 2018 by the Dharmraj Shrestha, Devraj Shrestha,
+                Ramraj Shrestha, Shivraj Shrestha. It is the India's Top film
+                Production Company & studio . RFC has formed a full-fledged film
+                studio in India. The studio's activities span across creative
+                development, production, marketing, distribution, licensing,
+                merchandising and syndication of films in India and worldwide.
+                They are also a premier visual effects company. Throughout the
+                last several years, Rama Film Company (RFC) has acquired the
+                rights to several Bollywood films.
               </Typography>
             </Grid>
           </Grid>
