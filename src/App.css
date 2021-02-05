@@ -37,6 +37,9 @@
   }
 }
 
-/* .MuiToolbar-root {
-  position: absolute !important;
-} */
+.MuiFormLabel-root.Mui-focused {
+  color: #ff7902 !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ff7902 !important;
+}
