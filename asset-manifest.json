@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "/rama-film-company/static/css/main.ed19e883.chunk.css",
-    "main.js": "/rama-film-company/static/js/main.00dabc02.chunk.js",
-    "main.js.map": "/rama-film-company/static/js/main.00dabc02.chunk.js.map",
-    "runtime-main.js": "/rama-film-company/static/js/runtime-main.9e2c9947.js",
-    "runtime-main.js.map": "/rama-film-company/static/js/runtime-main.9e2c9947.js.map",
-    "static/js/2.5d4dea19.chunk.js": "/rama-film-company/static/js/2.5d4dea19.chunk.js",
-    "static/js/2.5d4dea19.chunk.js.map": "/rama-film-company/static/js/2.5d4dea19.chunk.js.map",
-    "static/js/3.ba64eefa.chunk.js": "/rama-film-company/static/js/3.ba64eefa.chunk.js",
-    "static/js/3.ba64eefa.chunk.js.map": "/rama-film-company/static/js/3.ba64eefa.chunk.js.map",
+    "main.css": "/rama-film-company/static/css/main.e069a36f.chunk.css",
+    "main.js": "/rama-film-company/static/js/main.c1b1d3ae.chunk.js",
+    "main.js.map": "/rama-film-company/static/js/main.c1b1d3ae.chunk.js.map",
+    "runtime-main.js": "/rama-film-company/static/js/runtime-main.e900e60e.js",
+    "runtime-main.js.map": "/rama-film-company/static/js/runtime-main.e900e60e.js.map",
+    "static/css/2.b57b7cfd.chunk.css": "/rama-film-company/static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.5dfc3f94.chunk.js": "/rama-film-company/static/js/2.5dfc3f94.chunk.js",
+    "static/js/2.5dfc3f94.chunk.js.map": "/rama-film-company/static/js/2.5dfc3f94.chunk.js.map",
+    "static/js/3.2d0bbdab.chunk.js": "/rama-film-company/static/js/3.2d0bbdab.chunk.js",
+    "static/js/3.2d0bbdab.chunk.js.map": "/rama-film-company/static/js/3.2d0bbdab.chunk.js.map",
     "index.html": "/rama-film-company/index.html",
-    "static/css/main.ed19e883.chunk.css.map": "/rama-film-company/static/css/main.ed19e883.chunk.css.map",
-    "static/js/2.5d4dea19.chunk.js.LICENSE.txt": "/rama-film-company/static/js/2.5d4dea19.chunk.js.LICENSE.txt"
+    "static/css/2.b57b7cfd.chunk.css.map": "/rama-film-company/static/css/2.b57b7cfd.chunk.css.map",
+    "static/css/main.e069a36f.chunk.css.map": "/rama-film-company/static/css/main.e069a36f.chunk.css.map",
+    "static/js/2.5dfc3f94.chunk.js.LICENSE.txt": "/rama-film-company/static/js/2.5dfc3f94.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9e2c9947.js",
-    "static/js/2.5d4dea19.chunk.js",
-    "static/css/main.ed19e883.chunk.css",
-    "static/js/main.00dabc02.chunk.js"
+    "static/js/runtime-main.e900e60e.js",
+    "static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.5dfc3f94.chunk.js",
+    "static/css/main.e069a36f.chunk.css",
+    "static/js/main.c1b1d3ae.chunk.js"
   ]
 }
