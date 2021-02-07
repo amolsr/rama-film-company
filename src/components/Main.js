@@ -7,13 +7,12 @@ import {
   Grid,
   makeStyles,
   Typography,
-  Paper,
-  TextField,
-  Button,
 } from "@material-ui/core";
-import Carousel from "react-material-ui-carousel";
-import PhoneIcon from "@material-ui/icons/Phone";
-import EmailIcon from "@material-ui/icons/Email";
+
+import Contact from "./Contact";
+import About from "./About";
+import Landing from "./Landing";
+import Team from "./Team";
 
 const useStyle = makeStyles((theme) => ({
   img: { maxWidth: "100%", maxHeight: "100%" },
@@ -33,14 +32,21 @@ const useStyle = makeStyles((theme) => ({
     marginRight: "10px",
     marginBottom: "10px",
   },
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,1)",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,0.8)",
+      outline: "1px solid slategrey",
+    },
+  },
 }));
 
 export default function Main() {
-  var items = [
-    process.env.PUBLIC_URL + "/image/1.jpg",
-    process.env.PUBLIC_URL + "/image/2.jpg",
-    process.env.PUBLIC_URL + "/image/33.jpg",
-  ];
   var gridItems = [
     {
       url: "/image/core-img/video.png",
@@ -104,20 +110,7 @@ export default function Main() {
       <Box
         style={{ zIndex: -1, marginTop: "-10vh", backgroundColor: "#f5f5f0" }}
       >
-        <Carousel animation="fade">
-          {items.map((item, i) => (
-            <div
-              style={{
-                backgroundImage: `url(${item})`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                height: "102vh",
-                width: "100%",
-              }}
-            ></div>
-          ))}
-        </Carousel>
+        <Landing />
         <Box
           my={8}
           style={{ backgroundColor: "#f5f5f0", textAlignLast: "center" }}
@@ -253,159 +246,9 @@ export default function Main() {
           ))}
         </Grid>
       </Container>
-      <Box
-        my={8}
-        style={{ backgroundColor: "#f5f5f0", textAlignLast: "center" }}
-      >
-        <Container>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            spacing={6}
-            style={{
-              margin: "5vh 0vh",
-              width: "100%",
-            }}
-          >
-            <Grid item md={12} lg={6}>
-              {" "}
-              <img
-                src={process.env.PUBLIC_URL + "/image/phot.jpg"}
-                alt="sect1"
-                className={classes.img}
-              />
-            </Grid>
-            <Grid item md={12} lg={6}>
-              <Typography variant="h3" align="center" gutterBottom>
-                ABOUT <span style={{ color: "#ff7902" }}> US</span>
-              </Typography>
-              <Typography variant="body1" align="justify">
-                Rama Film Company is an Indian film Production company, owned by
-                DDRS Brothers its wholly owned subsidiary DDRS Group, and is one
-                of Bollywood's "Big Six" film studios. Its production company &
-                studios are at Ashram marg Sant Ravidas nagar, Utar Pradesh,
-                India. Distribution and other corporate offices are in
-                Ghaziabad, Delhi NCR . Rama Film Company (RFC) is a member of
-                the Motion Picture Association of Indis(MPAI). Rama Film Company
-                was founded in 2018 by the Dharmraj Shrestha, Devraj Shrestha,
-                Ramraj Shrestha, Shivraj Shrestha. It is the India's Top film
-                Production Company & studio . RFC has formed a full-fledged film
-                studio in India. The studio's activities span across creative
-                development, production, marketing, distribution, licensing,
-                merchandising and syndication of films in India and worldwide.
-                They are also a premier visual effects company. Throughout the
-                last several years, Rama Film Company (RFC) has acquired the
-                rights to several Bollywood films.
-              </Typography>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-      <Box>
-        <Grid
-          container
-          justify="center"
-          alignItems="center"
-          spacing={6}
-          style={{
-            margin: "5vh 0vh",
-            width: "100%",
-          }}
-        >
-          <Grid item md={12} lg={6}>
-            <Typography variant="h3" gutterBottom>
-              CONTACT US <span style={{ color: "#ff7902" }}> TODAY NOW</span>
-            </Typography>
-            <Grid container>
-              <Grid item xs={12} md={6}>
-                <Typography variant="body1" gutterBottom>
-                  <p style={{ display: "flex" }}>
-                    <PhoneIcon className={classes.icon} />
-                    +91-9958683725
-                    <br />
-                    +91-9818434636
-                  </p>
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={6}>
-                <Typography variant="body1" gutterBottom>
-                  <p style={{ display: "flex" }}>
-                    <EmailIcon className={classes.icon} />
-                    info@ramafilmcompany.com <br />
-                    enquiry@ramafilmcompany.com
-                  </p>
-                </Typography>
-              </Grid>
-              {/* <Grid container spacing={4}>
-                <Grid item xs={12} md={6}>
-                  <img
-                    src={process.env.PUBLIC_URL + "/image/13.jpg"}
-                    alt="sect1"
-                    className={classes.card}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <img
-                    src={process.env.PUBLIC_URL + "/image/14.jpg"}
-                    alt="sect1"
-                    className={classes.card}
-                  />
-                </Grid>
-              </Grid> */}
-            </Grid>
-          </Grid>
-
-          <Grid item component={Paper} md={12} lg={6}>
-            {" "}
-            <Typography variant="h4" gutterBottom>
-              WHAT WOULD YOU LIKE TO TALK ABOUT
-            </Typography>
-            <Typography variant="h5" style={{ color: "#ff7902" }}>
-              We'd Love to Hear From you !
-            </Typography>
-            <form className={classes.root} noValidate autoComplete="off">
-              <Grid container justify="center" alignItems="center" spacing={2}>
-                <Grid item xs={12} md={6} compoent={TextField}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Name"
-                    variant="outlined"
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    id="outlined-basic"
-                    label="Email"
-                    variant="outlined"
-                    fullWidth
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  {" "}
-                  <TextField
-                    id="outlined-basic"
-                    label="Your Message"
-                    variant="outlined"
-                    multiline
-                    fullWidth
-                    rows={4}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: "#ff7902", color: "white" }}
-                  >
-                    Submit Now
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
-          </Grid>
-        </Grid>
-      </Box>
+      <About />
+      <Team />
+      <Contact />
       <Footer />
     </div>
   );
