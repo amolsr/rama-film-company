@@ -154,13 +154,24 @@ function NavBar(props) {
       </div>
       <Divider />
       <List component="nav">
-        <ListItem button>
+        <ListItem
+          button
+          component={Link}
+          to="/"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button>
+
+        <ListItem
+          button
+          component={Link}
+          to="/portfolio"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <ListItemIcon>
             <WorkIcon />
           </ListItemIcon>

@@ -6,16 +6,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
-import ReactPlayer from "react-player";
-const useStyle = makeStyles((theme) => ({
-  img: { maxWidth: "100%", maxHeight: "100%" },
-  video: {
-    maxWidth: "90%",
-    maxHeight: "90%",
-  },
-}));
+
 export default function Portfolio() {
-  const classes = useStyle();
   return (
     <Box style={{ zIndex: -1, marginTop: "-10vh" }}>
       <div
@@ -39,15 +31,18 @@ export default function Portfolio() {
           container
           justify="center"
           alignItems="center"
+          spacing={6}
           style={{
             margin: "5vh 0vh",
             width: "100%",
+            textAlignLast: "center",
           }}
         >
           <Grid item md={12} lg={6}>
-            <ReactPlayer
-              className={classes.video}
-              url="https://www.youtube.com/watch?v=7n7ospBeUwQ"
+            <iframe
+              className="video"
+              src="https://www.youtube.com/embed/7n7ospBeUwQ"
+              frameBorder="0"
             />
           </Grid>
           <Grid item md={12} lg={6}>
