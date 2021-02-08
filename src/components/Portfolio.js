@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Box, Container, Grid, Typography } from "@material-ui/core";
 import React from "react";
 
 export default function Portfolio() {
@@ -41,6 +35,7 @@ export default function Portfolio() {
           <Grid item md={12} lg={6}>
             <iframe
               className="video"
+              title="Video"
               src="https://www.youtube.com/embed/7n7ospBeUwQ"
               frameBorder="0"
             />
