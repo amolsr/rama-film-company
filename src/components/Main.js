@@ -1,6 +1,5 @@
 import React from "react";
-import Header from "./_include/_header";
-import Footer from "./_include/_footer";
+
 import {
   Box,
   Container,
@@ -31,18 +30,6 @@ const useStyle = makeStyles((theme) => ({
     lineHeight: "36px",
     marginRight: "10px",
     marginBottom: "10px",
-  },
-  "@global": {
-    "*::-webkit-scrollbar": {
-      width: "0.4em",
-    },
-    "*::-webkit-scrollbar-track": {
-      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,1)",
-    },
-    "*::-webkit-scrollbar-thumb": {
-      backgroundColor: "rgba(0,0,0,0.8)",
-      outline: "1px solid slategrey",
-    },
   },
 }));
 
@@ -106,7 +93,6 @@ export default function Main() {
   const classes = useStyle();
   return (
     <div>
-      <Header />
       <Box
         style={{ zIndex: -1, marginTop: "-10vh", backgroundColor: "#f5f5f0" }}
       >
@@ -249,7 +235,6 @@ export default function Main() {
       <About />
       <Team />
       <Contact />
-      <Footer />
     </div>
   );
 }

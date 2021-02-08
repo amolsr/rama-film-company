@@ -3,22 +3,30 @@ import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
-import { IconButton } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Hidden,
+  IconButton,
+  ListItemIcon,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import HomeIcon from "@material-ui/icons/Home";
+import WorkIcon from "@material-ui/icons/Work";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +40,13 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  navbtn: {
+    margin: theme.spacing(1, 2),
+    "&:hover": {
+      color: "#ff7902",
+      backgroundColor: "rgb(255, 255, 255, 0.1)",
+    },
+  },
   logo: {
     paddingTop: theme.spacing(1),
   },
@@ -40,6 +55,26 @@ const useStyles = makeStyles((theme) => ({
   },
   fullList: {
     width: "auto",
+  },
+  drawerHeader: {
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-start",
+  },
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,1)",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,0.8)",
+      outline: "1px solid slategrey",
+    },
   },
 }));
 
@@ -76,6 +111,7 @@ function ScrollTop(props) {
 function NavBar(props) {
   const { window } = props;
   const classes = useStyles();
+  const theme = useTheme();
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -104,29 +140,32 @@ function NavBar(props) {
         [classes.fullList]: anchor === "top" || anchor === "bottom",
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
     >
-      <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <div className={classes.drawerHeader}>
+        <IconButton onClick={toggleDrawer(false)}>
+          {theme.direction === "rtl" ? (
+            <ChevronLeftIcon />
+          ) : (
+            <ChevronRightIcon />
+          )}
+        </IconButton>
+      </div>
       <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List component="nav">
+        <ListItem button>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <WorkIcon />
+          </ListItemIcon>
+          <ListItemText primary="Portfolio" />
+        </ListItem>
       </List>
     </div>
   );
@@ -150,18 +189,38 @@ function NavBar(props) {
             alt="logo"
           />
         </Typography>
-        <Drawer anchor="right" open={state} onClose={toggleDrawer(false)}>
-          {list("right")}
-        </Drawer>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-          onClick={toggleDrawer(true)}
-        >
-          <MenuIcon />
-        </IconButton>
+        <Hidden mdUp>
+          <Drawer anchor="right" open={state} onClose={toggleDrawer(false)}>
+            {list("right")}
+          </Drawer>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Hidden>
+
+        <Hidden smDown>
+          <Box>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              <Button color="inherit" className={classes.navbtn}>
+                <Typography variant="h5">Home</Typography>
+              </Button>
+            </Link>
+            <Link
+              to="/portfolio"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <Button color="inherit" className={classes.navbtn}>
+                <Typography variant="h5">Portfolio</Typography>
+              </Button>
+            </Link>
+          </Box>
+        </Hidden>
       </Toolbar>
     </AppBar>
   );
